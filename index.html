@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interaction Design Journal</title>
+<style>
+
+/* RESET */
+/* removes default spacing for fresh start */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* PAGE BACKGROUND */
+body {
+  background-color: #f4f4f4;   /* light grey background */
+  font-family: Arial;
+  color: #333333;              /* dark grey text */
+  line-height: 1.6;            /* space between lines of text */
+}
+
+/* NAVIGATION BAR */
+nav {
+  background-color: white;
+  padding: 14px 30px;
+  border-bottom: 3px solid #2563eb;  /* blue line under nav */
+}
+
+nav .logo {
+  font-weight: bold;
+  font-size: 18px;
+  color: #2563eb;             /* blue logo text */
+}
+
+/* BANNER */
+.banner {
+  background-color: #2563eb;   /* blue banner */
+  padding: 60px 30px;
+  text-align: center;
+  color: white;
+}
+
+.banner h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.banner p {
+  font-size: 16px;
+  color: #dbeafe;             /* light blue text */
+}
+
+/* MAIN CONTENT WRAPPER */
+/* This keeps everything centred and not too wide */
+.content {
+  max-width: 800px;           /* max width of content */
+  margin: 0 auto;             /* centres it */
+  padding: 30px 20px;
+}
+
+/* WHITE BOX (used for each section) */
+.box {
+  background-color: white;
+  border: 1px solid #dddddd;
+  padding: 25px 30px;
+  margin-bottom: 25px;
+  border-radius: 4px;         /* slightly rounded corners */
+}
+
+/* HEADINGS */
+.box h2 {
+  font-size: 22px;
+  color: #1a1a1a;
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #2563eb;  /* blue line under heading */
+}
+
+.box h3 {
+  font-size: 17px;
+  color: #2563eb;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.box h4 {
+  font-size: 15px;
+  color: #333333;
+  margin-top: 14px;
+  margin-bottom: 6px;
+}
+
+/* TEXT AND LISTS */
+.box p {
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.box ul, .box ol {
+  padding-left: 24px;
+  margin-bottom: 12px;
+}
+
+.box li {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+/* LAB CARDS (blue top border) */
+.lab {
+  background-color: white;
+  border: 1px solid #dddddd;
+  border-top: 4px solid #2563eb;    /* thick blue top border */
+  padding: 25px 30px;
+  margin-bottom: 25px;
+  border-radius: 4px;
+}
+
+.lab h2 {
+  font-size: 20px;
+  color: #2563eb;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.lab h3 {
+  font-size: 17px;
+  color: #2563eb;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.lab p {
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.lab ul, .lab ol {
+  padding-left: 24px;
+  margin-bottom: 12px;
+}
+
+.lab li {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+/* REFLECTION BOX (yellow left border) */
+.reflection {
+  background-color: #fffbeb;           /* light yellow bg */
+  border-left: 4px solid #f59e0b;     /* orange left border */
+  padding: 14px 18px;
+  margin: 16px 0;
+}
+
+.reflection p {
+  font-size: 14px;
+  color: #78350f;                      /* dark brown text */
+  margin-bottom: 0;
+}
+
+/* BAD DESIGN BOX (red left border) */
+.bad-example {
+  background-color: #fef2f2;           /* light red bg */
+  border-left: 4px solid #dc2626;      /* red left border */
+  padding: 16px 20px;
+  margin-bottom: 14px;
+}
+
+.bad-example h4 {
+  color: #dc2626;                      /* red heading */
+  margin-bottom: 6px;
+  font-size: 15px;
+}
+
+.bad-example p {
+  font-size: 13px;
+  color: #555555;
+  margin-bottom: 8px;
+}
+
+/* GOOD DESIGN BOX (green left border) */
+.good-example {
+  background-color: #f0fdf4;           /* light green bg */
+  border-left: 4px solid #16a34a;      /* green left border */
+  padding: 16px 20px;
+  margin-bottom: 14px;
+}
+
+.good-example h4 {
+  color: #16a34a;                      /* green heading */
+  margin-bottom: 6px;
+  font-size: 15px;
+}
+
+.good-example p {
+  font-size: 13px;
+  color: #555555;
+  margin-bottom: 8px;
+}
+
+/* BLUE INFO BOX */
+.info-box {
+  background-color: #eff6ff;           /* light blue bg */
+  border-left: 4px solid #2563eb;      /* blue left border */
+  padding: 14px 18px;
+  margin: 16px 0;
+}
+
+.info-box p {
+  font-size: 14px;
+  color: #1e40af;                      /* dark blue text */
+  margin-bottom: 0;
+}
+
+/* IMAGE STYLING */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 16px 0;
+}
+
+/* Simple 3-column row for last images */
+.three-images-row {
+  display: flex;
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.three-images-row div {
+  flex: 1;
+}
+
+.three-images-row img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  margin: 0;
+}
+
+/* TABLE */
+table {
+  width: 100%;
+  border-collapse: collapse;           /* removes double borders */
+  margin: 16px 0;
+  font-size: 13px;
+}
+
+table th {
+  background-color: #2563eb;           /* blue header */
+  color: white;
+  padding: 10px 12px;
+  text-align: left;
+}
+
+table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #dddddd;
+  color: #444444;
+}
+
+/* TABLE OF CONTENTS */
+.toc {
+  background-color: white;
+  border: 1px solid #dddddd;
+  padding: 22px 28px;
+  margin-bottom: 28px;
+  border-radius: 4px;
+}
+
+.toc h2 {
+  font-size: 20px;
+  color: #2563eb;
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #2563eb;
+}
+
+.toc ol {
+  padding-left: 22px;
+}
+
+.toc li {
+  font-size: 14px;
+  padding: 3px 0;
+}
+
+.toc li a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.toc li a:hover {
+  text-decoration: underline;
+}
+
+.toc li ul {
+  list-style: circle;
+  padding-left: 18px;
+  margin-top: 4px;
+}
+
+/* FOOTER */
+footer {
+  background-color: #1a1a1a;           /* dark bg */
+  color: #aaaaaa;
+  text-align: center;
+  padding: 28px 20px;
+}
+
+footer h3 {
+  color: white;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+footer p {
+  font-size: 12px;
+  color: #777777;
+}
+
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <span class="logo">Interaction Design Journal</span>
+</nav>
+
+<!-- BLUE BANNER -->
+<div class="banner">
+  <h1>Interaction Design Journal</h1>
+  <p>Exploring how to make technology feel human, intuitive, and easy to use through reflective practice and hands-on lab work.</p>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="content">
+
+  <!-- TABLE OF CONTENTS -->
+  <div class="toc">
+    <h2>Table of Contents</h2>
+    <ol>
+      <li><a href="#what-is">What is Interaction Design</a></li>
+      <li><a href="#why-journal">Why Journal?</a></li>
+      <li><a href="#reflective">Reflective Journaling</a></li>
+      <li>
+        Labs
+        <ul>
+          <li><a href="#lab1">Lab 1 - HTML Basics</a></li>
+          <li><a href="#lab2">Lab 2 - CSS and Colour</a></li>
+          <li><a href="#lab3">Lab 3 - UX/UI Theory</a></li>
+          <li><a href="#lab4">Lab 4 - Website Design</a></li>
+          <li><a href="#lab5">Lab 5 - UI Elements and Divs</a></li>
+        </ul>
+      </li>
+      <li><a href="#principles">Graphic Design Principles</a></li>
+      <li><a href="#terrible">Terrible Website Examples</a></li>
+      <li><a href="#great">Great Website Examples</a></li>
+      <li><a href="#references">References</a></li>
+    </ol>
+  </div>
+
+  <!-- ========== WHAT IS INTERACTION DESIGN ========== -->
+  <div class="box" id="what-is">
+    <h2>What is Interaction Design?</h2>
+    <p>Interaction design is about making technology feel human and bridge the gap between you and your device, turning complex computer actions into simple actions like tapping a button. By anticipating mistakes like typos or forgotten passwords it ensures tools are forgiving and easy to use. Ultimately, it designs products that fit naturally into your life, so you can accomplish your daily tasks without ever fighting with a screen.</p>
+
+    <h3>HCI Process Lifecycle Model</h3>
+    <p>The Human-Computer Interaction (HCI) process follows an iterative lifecycle that ensures user needs remain central throughout design and development. The key stages are: Requirements (understanding user needs), Design (creating prototypes), Development (building interfaces), Implementation (deploying to users), Evaluation (user testing), and Refinement (iterate based on findings).</p>
+
+    <img src="images/1.png" alt="1">
+  </div>
+
+  <!-- ========== WHY JOURNAL ========== -->
+  <div class="box" id="why-journal">
+    <h2>Why Journal?</h2>
+    <ul>
+      <li>To have a documented creative process</li>
+      <li>A journal gives you a place to write down feedback immediately.</li>
+      <li>A journal is private or low stakes. You can draw terrible sketches or write potentially bad ideas for a project. Often, the best innovative ideas come from editing a "bad" idea that you felt safe enough to write down.</li>
+    </ul>
+  </div>
+
+  <!-- ========== REFLECTIVE JOURNALING ========== -->
+  <div class="box" id="reflective">
+    <h2>Reflective Journaling</h2>
+    <p>Reflective journaling in interaction design serves as a powerful tool for professional development and learning. According to Schön's (1983) work on reflective practice, designers engage in "reflection-in-action" while working and "reflection-on-action" after completing tasks. This journal serves as a space for the latter, allowing me to examine my design decisions and learning progress.</p>
+    <p>Academic research supports the value of reflective journaling in design education. Moon (2006) argues that journal writing enhances learning by encouraging deeper cognitive processing and helping students make connections between theory and practice.</p>
+  </div>
+
+  <!-- ========== LAB 1 ========== -->
+  <div class="lab" id="lab1">
+    <h2>Lab 1 - HTML Basics</h2>
+    <ul>
+      <li>Created this journal</li>
+      <li>HTML basics, made extremely small webpage with h1, h2, and p tags</li>
+      <li>Looked through slideshow about what you want in design and what is a good design vs what is a bad design</li>
+    </ul>
+
+    <div class="reflection">
+      <p><strong>Reflection:</strong> This initial lab helped me understand that interaction design is not just about aesthetics but about creating functional, intuitive experiences. The HTML exercise showed me how even basic structural elements contribute to a page's usability and accessibility.</p>
+    </div>
+  </div>
+
+  <!-- ========== LAB 2 ========== -->
+  <div class="lab" id="lab2">
+    <h2>Lab 2 - CSS and Colour</h2>
+    <p><strong>Today we:</strong></p>
+    <ul>
+      <li>Learned how to make ordered and unordered lists</li>
+      <li>Implemented colours into the website</li>
+      <li>Learned how to move text into the middle and to the right side</li>
+    </ul>
+
+    <img src="images/2.png" alt="2">
+
+    <ul>
+      <li>We did some Photoshop fundamentals and practised</li>
+    </ul>
+
+    <div class="reflection">
+      <p><strong>Reflection:</strong> This lab demonstrated the connection between code and visual output. Understanding how CSS properties translate to visual design helps me appreciate the importance of separating structure (HTML) from presentation (CSS). The Photoshop introduction showed me how graphic design skills complement web development.</p>
+    </div>
+
+    <img src="images/3.png" alt="3">
+
+    <h3>W3 Schools Walk-through Study</h3>
+    <p>As part of my self-directed learning, I have been working through W3 Schools tutorials to build a stronger foundation in HTML and CSS. Key topics covered include:</p>
+    <ul>
+      <li><strong>HTML Elements</strong> - Learned semantic HTML for accessibility and SEO</li>
+      <li><strong>CSS Selectors</strong> - Understanding cascade and specificity</li>
+      <li><strong>Box Model</strong> - Content, padding, border, margin fundamentals</li>
+      <li><strong>Colour Properties</strong> - Hex codes, RGB/RGBA, named colours</li>
+    </ul>
+  </div>
+
+  <!-- ========== LAB 3 ========== -->
+  <div class="lab" id="lab3">
+    <h2>Lab 3 - UX/UI Theory</h2>
+
+    <h3>The Difference Between UX and UI</h3>
+    <ul>
+      <li><strong>UX</strong> stands for user experience and is very heavily focused on how a website feels - is it easy, efficient and enjoyable to use.</li>
+      <li><strong>UI</strong> stands for user interface and is all about how the website looks.</li>
+      <li>So, if UX is the architecture of a house, UI is the interior design and styling.</li>
+    </ul>
+    <p>These two disciplines work together closely - a beautiful interface (UI) cannot save a confusing user journey (UX), and the best user experience needs an attractive interface to engage users effectively.</p>
+
+    <h3>Interface Metaphors</h3>
+    <ul>
+      <li>The <strong>trash bin</strong> on computers is a very good example of a metaphor because it makes deleting a file just like throwing a piece of paper in the garbage.</li>
+      <li>The <strong>shopping cart</strong> at website checkouts is another metaphor for pushing a cart to the checkout just like in a real store.</li>
+    </ul>
+    <p>Desktop and folders metaphors help users organize digital files similarly to physical documents, making file management intuitive. These metaphors reduce the learning curve for new users by connecting digital concepts to familiar real-world objects.</p>
+
+    <img src="images/4.png" alt="4">
+
+    <h3>Examples of Bad Designs</h3>
+
+    <div class="bad-example">
+      <h4>Pop-up Ads</h4>
+      <p>These interrupt the user's flow and force them to hunt for a tiny close button, often leading to accidental clicks. They prioritise advertiser goals over the user's experience.</p>
+      <img src="images/5.png" alt="5">
+    </div>
+
+    <div class="bad-example">
+      <h4>Windows 8 Start Screen</h4>
+      <p>Removed the familiar Start button that users had relied on for nearly 20 years. People couldn't easily find applications or shut down their computers, forcing Microsoft to bring back the button in later versions.</p>
+      <img src="images/6.png" alt="6">
+    </div>
+
+    <div class="bad-example">
+      <h4>Non-descriptive Error Messages</h4>
+      <p>Messages like "An error occurred" or "Error code: 0x80070005" leave users confused about what went wrong or how to fix it, with no clear path forward.</p>
+      <img src="images/7.png" alt="7">
+    </div>
+
+    <h3>Examples of Good Designs</h3>
+
+    <p>Good design prioritizes clarity, usability, and user satisfaction. Examples include:</p>
+
+    <div class="good-example">
+      <h4>Google's Homepage</h4>
+      <p>The minimalist design with a single search field demonstrates focus on the primary user goal. White space guides attention to what matters most.</p>
+      <img src="images/8.png" alt="8">
+    </div>
+
+    <div class="good-example">
+      <h4>iPhone Interface</h4>
+      <p>Consistent gestures, clear iconography, and intuitive navigation make complex technology accessible to users of all skill levels.</p>
+      <img src="images/9.png" alt="9">
+    </div>
+
+    <div class="good-example">
+      <h4>Spotify</h4>
+      <p>The dark theme reduces eye strain during extended use, while personalized playlists help users discover content efficiently.</p>
+      <img src="images/10.png" alt="10">
+    </div>
+
+    <p>Key principles these examples demonstrate: clear visual hierarchy, consistent design patterns, immediate feedback on user actions, and designs that anticipate user needs.</p>
+  </div>
+
+  <!-- ========== GRAPHIC DESIGN PRINCIPLES ========== -->
+  <div class="box" id="principles">
+    <h2>Graphic Design Principles</h2>
+    <p>Understanding graphic design principles is essential for creating visually effective interfaces:</p>
+
+    <table>
+      <tr>
+        <th>Principle</th>
+        <th>Description and Application</th>
+      </tr>
+      <tr>
+        <td><strong>Hierarchy</strong></td>
+        <td>Using size, colour, and position to indicate importance.</td>
+      </tr>
+      <tr>
+        <td><strong>Contrast</strong></td>
+        <td>Differences between elements create visual interest and improve readability.</td>
+      </tr>
+      <tr>
+        <td><strong>Alignment</strong></td>
+        <td>Elements should align with each other to create visual connections and organize information.</td>
+      </tr>
+      <tr>
+        <td><strong>Proximity</strong></td>
+        <td>Related items should be grouped together to ease access for the user.</td>
+      </tr>
+      <tr>
+        <td><strong>White Space</strong></td>
+        <td>Empty space improves readability and reduces cognitive load.</td>
+      </tr>
+    </table>
+
+    <h3>W3 Schools Website Analysis</h3>
+
+    <table>
+      <tr>
+        <th>Webpage</th>
+        <th>Initial thoughts</th>
+        <th>Problems</th>
+        <th>Solution suggestion</th>
+      </tr>
+      <tr>
+        <td>HTML Home</td>
+        <td>Nice layout, very clean and sleek. Crazy exercise at the bottom of the page.</td>
+        <td>The video tutorial is at the bottom. There is an exercise on the page that hasn't been taught yet (Links).</td>
+        <td>Move the video to the top. Include a tutorial for links later, on a different page and put the exercise there.</td>
+      </tr>
+      <tr>
+        <td>HTML Intro</td>
+        <td>Nothing special, good layout.</td>
+        <td>The same video tutorial is at the bottom.</td>
+        <td>If the video is on the other page at the top, then completely remove the video.</td>
+      </tr>
+      <tr>
+        <td>HTML Editors</td>
+        <td>None, it's the same as all the others the layout is generally very consistent.</td>
+        <td>The video for this page is at the bottom.</td>
+        <td>Move video to the top.</td>
+      </tr>
+      <tr>
+        <td>HTML Basic</td>
+        <td>This one has an exercise at the bottom, which is where it should be.</td>
+        <td>No problem, it's very nice.</td>
+        <td><img src="images/11.gif" alt="11"></td>
+      </tr>
+      <tr>
+        <td>HTML Elements</td>
+        <td>Looks very similar with a seemingly out of place yellow single line of text.</td>
+        <td>There is a yellow line of text that is ugly and seems to be laid out improperly.</td>
+        <td>Yellow (specifically this shade) looks off, I feel green would suit better (before):<br><img src="images/12.png" alt="12"><br>(after):<br><img src="images/13.png" alt="13"></td>
+      </tr>
+      <tr>
+        <td>HTML Attributes</td>
+        <td>This webpage is consistent with the other ones and functions well in the ways it needs to.</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>HTML Headings</td>
+        <td>This webpage is consistent with the other ones and functions well in the ways it needs to.</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>HTML Paragraphs</td>
+        <td>This webpage is consistent with the other ones and functions well in the ways it needs to.</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- ========== LAB 4 ========== -->
+  <div class="lab" id="lab4">
+    <h2>Lab 4 - Website Design</h2>
+    <p>In this lab we designed a website and this was how mine turned out, we were encouraged to play around with the HTML and CSS to make it look visually pleasing instead of the barebones designs that we were doing previously.</p>
+
+    <img src="images/14.png" alt="14">
+
+    <img src="images/15.png" alt="15">
+  </div>
+
+  <!-- ========== LAB 5 ========== -->
+  <div class="lab" id="lab5">
+    <h2>Lab 5 - UI Elements and Divs</h2>
+    <p>Today for this lab the class worked on UI Elements and Principles of Design to get a better understanding of the principles of design. Working on UI elements and principles of design in a lab setting is highly helpful because it transforms abstract concepts into practical skills, bridging the gap between theoretical knowledge and real-world application.</p>
+    <p>We also learned how to do div and put divs into the webpage using HTML.</p>
+
+    <img src="images/16.png" alt="16">
+  </div>
+
+  <!-- ========== TERRIBLE WEBSITE EXAMPLES ========== -->
+  <div class="box" id="terrible">
+    <h2>Terrible Website Examples</h2>
+
+    <img src="images/17.png" alt="17">
+
+    <h3><a href="https://lifeactionrevival.org" target="_blank" rel="noopener noreferrer">lifeactionrevival.org</a></h3>
+    <p>This website is very terrible, but it seems it is that way on purpose. Everything is cluttered and non-uniform, and the background is dull and grey but at the same time I think personally this website doesn't have so much that it's too stimulating and the colours are all quite similar, with a colour palette of mostly grey with some other low profile colours like brown, orange, beige and a deep green. This website is quite calming if you can get past the terrible layout design, I think the colours are quite tranquil. I think this website was made intentionally poorly by a graphic designer and even though this website is conventionally ugly it seems it is very well thought out.</p>
+
+    <img src="images/18.png" alt="18">
+
+    <h3><a href="https://chestertourist.com" target="_blank" rel="noopener noreferrer">chestertourist.com</a></h3>
+    <p>Chestertourist.com is a terrible, non-functional website ruined by a completely cluttered and non-uniform layout. Visually, it is overwhelmingly ugly, anchored by a dull, lifeless grey background and a flat colour palette consisting only of similarly muted shades like brown, orange, beige, and deep green. Because everything is thrown together so haphazardly without any clear visual hierarchy or contrast, the site completely fails at being readable or being easy to engage with and navigate, leaving you with a chaotic mess that is ugly and hard to navigate.</p>
+
+    <img src="images/19.png" alt="19">
+
+    <h3><a href="https://monkzone.com" target="_blank" rel="noopener noreferrer">monkzone.com</a></h3>
+    <p>Monkzone.com's index page is a wall of rambling, repetitive text stuffed with awkward, keyword-heavy phrases ("we are jazz mp3... jazz-music-downloads... we are hip hop...") instead of clear navigation or information. The layout is bare and confusing, with the homepage offering only a couple of unlabelled links ("ENTER THELONIOUS MONK ZONE," "ENTER THELONIOUS MONK STORE"), and even those lead to sparse, dated pages that feel unfinished and hard to scan. Between the SEO-spam style copy, the lack of visual hierarchy, and the overall early-2000s aesthetic, the site looks messy and unwelcoming and barely functions as a usable fan or store hub.</p>
+
+    <img src="images/20.png" alt="20">
+
+    <h3><a href="https://arngren.net" target="_blank" rel="noopener noreferrer">arngren.net</a></h3>
+    <p>Arngren is a complete clutter of visual noise! This while having lots of things on the homepage which is already a questionable decision, it also poorly categorises these products and in the screenshot you can see the "el-fatbike Foldable" category being off centre near the middle slightly to the left with the column going all the way from the bottom but not going up to the top. There are so many questionable design decisions made on this site such as terrible space management, and even things like the logo on the site changes red and becomes weird and almost unrecognisable to look at.</p>
+
+    <div class="three-images-row">
+      <div><img src="images/21.png" alt="21"></div>
+      <div><img src="images/22.png" alt="22"></div>
+      <div><img src="images/23.png" alt="23"></div>
+    </div>
+    </div>
+
+  <!-- ========== GREAT WEBSITE EXAMPLES ========== -->
+  <div class="box" id="great">
+    <h2>Great Website Examples</h2>
+
+
+    <h3><a href="https://floor796.com" target="_blank" rel="noopener noreferrer">floor796.com</a></h3>
+    <p><a href="https://floor796.com" target="_blank" rel="noopener noreferrer">https://floor796.com/</a></p>
+  </div>
+
+  <!-- ========== REFERENCES ========== -->
+  <div class="box" id="references">
+    <h2>References</h2>
+    <ul>
+      <li>Moon, J. A. (2006). <em>Learning Journals: A Handbook for Reflective Practice and Professional Development</em>. Routledge.</li>
+      <li>Schön, D. A. (1983). <em>The Reflective Practitioner: How Professionals Think in Action</em>. Basic Books.</li>
+      <li>W3 Schools. (2024). HTML and CSS Tutorials. https://www.w3schools.com/</li>
+    </ul>
+  </div>
+
+</div>
+
+<footer>
+  <h3>Interaction Design Journal</h3>
+  <p>Created for graphic design coursework</p>
+</footer>
+
+</body>
+</html>
