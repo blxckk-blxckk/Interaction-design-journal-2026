@@ -323,6 +323,52 @@ footer p {
   color: #777777;
 }
 
+/* HEURISTIC CARD (for Nielsen section) */
+.heuristic-card {
+  background-color: white;
+  border: 1px solid #dddddd;
+  border-left: 4px solid #2563eb;      /* blue left border */
+  padding: 20px 24px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+
+.heuristic-card .heuristic-number {
+  display: inline-block;
+  background-color: #2563eb;           /* blue badge */
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 3px 10px;
+  border-radius: 12px;
+  margin-bottom: 8px;
+}
+
+.heuristic-card h3 {
+  font-size: 17px;
+  color: #2563eb;
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.heuristic-card .definition {
+  background-color: #eff6ff;           /* light blue bg */
+  border-left: 3px solid #93c5fd;      /* lighter blue left border */
+  padding: 10px 14px;
+  margin-bottom: 12px;
+}
+
+.heuristic-card .definition p {
+  font-size: 13px;
+  color: #1e40af;
+  margin-bottom: 0;
+}
+
+.heuristic-card p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
 </style>
 </head>
 <body>
@@ -647,15 +693,131 @@ footer p {
     </div>
     </div>
 
-  <!-- ========== GREAT WEBSITE EXAMPLES ========== -->
-  <div class="box" id="great">
+   <!-- ========== GREAT WEBSITE EXAMPLES ========== -->
+   <div class="box" id="great">
     <h2>Great Website Examples</h2>
 
-
-    <h3><a href="https://floor796.com" target="_blank" rel="noopener noreferrer">floor796.com</a></h3>
-    <p><a href="https://floor796.com" target="_blank" rel="noopener noreferrer">https://floor796.com/</a></p>
+    <div class="good-example">
+      <h4><a href="https://floor796.com" target="_blank" rel="noopener noreferrer">floor796.com</a></h4>
+      <p>Floor796 excels in interaction design by transforming a dense and static canvas into a dynamic as well as explorable ecosystem through intuitive affordances and layered multisensory feedback. The interface encourages active participation by ensuring that nearly every element, ranging from background characters to obscure objects, responds to user input with meaningful rewards such as identifying pop culture references, triggering hidden audio, or initiating mini games. By balancing seamless spatial navigation with progressive discovery through quests and Easter eggs, the site fosters a deep sense of agency and immersion, allowing users to engage as active participants rather than passive observers within a continuously evolving world. It's also really nice how the website is regularly updated, with the last update being 3 days ago and the last time the website was updated being displayed in the top right corner.</p>
+      <img src="images/24.png" alt="24">
+    </div>
   </div>
 
+  <!-- ========== JAKOB NIELSEN 10 USABILITY HEURISTICS ========== -->
+  <div class="box" id="nielsen">
+    <h2>Jakob Nielsen's 10 Usability Heuristics Compared to Windows File Explorer</h2>
+
+    <!-- Heuristic 1 -->
+    <div class="heuristic-card">
+      <span class="heuristic-number">Heuristic 1</span>
+      <h3>Visibility of System Status</h3>
+      <div class="definition">
+        <p><strong>Definition:</strong> The system should always keep users informed about what is going on, through appropriate feedback within reasonable time.</p>
+      </div>
+      <p><strong>Example in Windows File Explorer:</strong> The address bar shows your current path (where you are), and a progress bar appears when copying or moving files, and search results update as you type so you always see where you are and what's happening.</p>
+      <img src="images/25.png" alt="25">
+    </div>
+
+    <!-- Heuristic 2 -->
+    <div class="heuristic-card">
+      <span class="heuristic-number">Heuristic 2</span>
+      <h3>Match Between System and the Real World</h3>
+      <div class="definition">
+        <p><strong>Definition:</strong> The system should speak the user's language, with words, phrases and concepts familiar to the user, rather than system-oriented terms. Follow real-world conventions, making information appear in a natural and logical order.</p>
+      </div>
+      <p><strong>Example in Windows File Explorer:</strong> It uses everyday terms like "Desktop," "Documents," "Pictures," and "Downloads," and actions are labelled simply as "Cut," "Copy," "Paste," "Share," and "Delete," matching how people naturally talk about files (to be fair it probably played a large part in shaping how people talk about files because it has been around for so long).</p>
+      <img src="images/26.png" alt="26">
+    </div>
+
+    <!-- Heuristic 3 -->
+    <div class="heuristic-card">
+      <span class="heuristic-number">Heuristic 3</span>
+      <h3>User Control and Freedom</h3>
+      <div class="definition">
+        <p><strong>Definition:</strong> Users often choose system functions by mistake and will need a clearly marked "emergency exit" to leave the unwanted state without having to go through an extended dialogue. Support undo and redo.</p>
+      </div>
+      <p><strong>Example in Windows File Explorer:</strong> You can undo a move or copy with Ctrl+Z, and if you change your mind while dragging files you can press Esc to cancel the operation.</p>
+      <img src="images/27.png" alt="27">
+    </div>
+
+    <!-- Heuristic 4 -->
+    <div class="heuristic-card">
+      <span class="heuristic-number">Heuristic 4</span>
+      <h3>Consistency and Standards</h3>
+      <div class="definition">
+        <p><strong>Definition:</strong> Users should not have to wonder whether different words, situations, or actions mean the same thing. Follow platform conventions.</p>
+      </div>
+      <p><strong>Example in Windows File Explorer:</strong> Standard controls appear consistently across folders (Back/Forward, Up, Search in the top area), and common commands like Cut, Copy, Paste, Rename, Delete use the same labels and keyboard shortcuts as elsewhere in Windows.</p>
+      <img src="images/28.png" alt="28">
+    </div>
+
+    <!-- Heuristic 5 -->
+    <div class="heuristic-card">
+      <span class="heuristic-number">Heuristic 5</span>
+      <h3>Error Prevention</h3>
+      <div class="definition">
+        <p><strong>Definition:</strong> Even better than good error messages is a careful design which prevents a problem from occurring in the first place. Either eliminate error-prone conditions or check for them and present users with a confirmation option before they commit to the action.</p>
+      </div>
+      <p><strong>Example in Windows File Explorer:</strong> When you try to copy a file to a folder where a file with the same name already exists, File Explorer shows a clear "Replace or Skip" dialog with details so you can avoid accidentally overwriting important files.</p>
+      <img src="images/29.png" alt="29">
+    </div>
+
+    <!-- Heuristic 6 -->
+    <div class="heuristic-card">
+      <span class="heuristic-number">Heuristic 6</span>
+      <h3>Recognition Rather Than Recall</h3>
+      <div class="definition">
+        <p><strong>Definition:</strong> Minimize the user's memory load by making objects, actions, and options visible. The user should not have to remember information from one part of the dialogue to another. Instructions for use of the system should be visible or easily retrievable whenever appropriate.</p>
+      </div>
+      <p><strong>Example in Windows File Explorer:</strong> Common commands are placed in the ribbon/command bar and context menu (Cut, Copy, Paste, Share, Delete), and navigation options stay on screen, so you can recognize and choose actions instead of memorizing them.</p>
+      <img src="images/30.png" alt="30">
+    </div>
+
+    <!-- Heuristic 7 -->
+    <div class="heuristic-card">
+      <span class="heuristic-number">Heuristic 7</span>
+      <h3>Flexibility and Efficiency of Use</h3>
+      <div class="definition">
+        <p><strong>Definition:</strong> Accelerators - unseen by the novice user - may often speed up the interaction for the experienced user such that the system can cater to both inexperienced and experienced users. Allow users to tailor frequent actions.</p>
+      </div>
+      <p><strong>Example in Windows File Explorer:</strong> You can browse with the mouse or use shortcuts like Windows+E to open File Explorer quickly, Ctrl+C/V to copy/paste, and F2 to rename items, making repeated tasks much faster for experienced users.</p>
+      <img src="images/31.png" alt="31">
+    </div>
+
+    <!-- Heuristic 8 -->
+    <div class="heuristic-card">
+      <span class="heuristic-number">Heuristic 8</span>
+      <h3>Aesthetic and Minimalist Design</h3>
+      <div class="definition">
+        <p><strong>Definition:</strong> Dialogues should not contain information which is irrelevant or rarely needed. Every extra unit of information in a dialogue competes with the relevant units of information and diminishes their relative visibility.</p>
+      </div>
+      <p><strong>Example in Windows File Explorer:</strong> The default view hides extra clutter, focusing on the file list and key controls (navigation pane, address bar, search box), with optional elements like the Preview/Details pane shown only when you choose them.</p>
+      <img src="images/32.png" alt="32">
+    </div>
+
+    <!-- Heuristic 9 -->
+    <div class="heuristic-card">
+      <span class="heuristic-number">Heuristic 9</span>
+      <h3>Help Users Recognize, Diagnose, and Recover from Errors</h3>
+      <div class="definition">
+        <p><strong>Definition:</strong> Error messages should be expressed in plain language (no codes), precisely indicate the problem, and constructively suggest a solution.</p>
+      </div>
+      <p><strong>Example in Windows File Explorer:</strong> If a file can't be moved because it's in use or you don't have permission, the dialog tells you which file is involved and often what's wrong so you can close the app or change permissions and try again.</p>
+      <img src="images/33.png" alt="33">
+    </div>
+
+    <!-- Heuristic 10 -->
+    <div class="heuristic-card">
+      <span class="heuristic-number">Heuristic 10</span>
+      <h3>Help and Documentation</h3>
+      <div class="definition">
+        <p><strong>Definition:</strong> Even though it is better if the system can be used without documentation, it may be necessary to provide help and documentation. Any such information should be easy to search, focused on the user's task, list concrete steps to be carried out, and not be too large.</p>
+      </div>
+      <p><strong>Example in Windows File Explorer:</strong> Selecting "Help" in the menu or searching online opens Microsoft's File Explorer support page with step-by-step instructions for pinning folders, using Quick access, sharing files, and customizing views. Microsoft has a lot of help available to users.</p>
+      <img src="images/34.png" alt="34">
+    </div>
+  </div>
   <!-- ========== REFERENCES ========== -->
   <div class="box" id="references">
     <h2>References</h2>
@@ -670,7 +832,7 @@ footer p {
 
 <footer>
   <h3>Interaction Design Journal</h3>
-  <p>Created for graphic design coursework</p>
+  <p>Created for interaction design coursework 2026</p>
 </footer>
 
 </body>
